@@ -1,0 +1,24 @@
+{
+  "municipality": {
+    "id": "sample-city",
+    "name": "サンプル市",
+    "homepage": "https://example.jp",
+    "last_updated": "2023-10-27"
+  },
+  "category": {
+    "id": "disaster-prevention",
+    "name": "防災",
+    "services": [
+      {
+        "id": "map",
+        "name": "防災マップ",
+        "url": "https://example.jp/map"
+      },
+      {
+        "id": "stockpile",
+        "name": "備蓄品情報",
+        "url": "https://example.jp/stockpile"
+      }
+    ]
+  }
+}

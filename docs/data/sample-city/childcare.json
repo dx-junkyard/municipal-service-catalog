@@ -1,0 +1,24 @@
+{
+  "municipality": {
+    "id": "sample-city",
+    "name": "サンプル市",
+    "homepage": "https://example.jp",
+    "last_updated": "2023-10-27"
+  },
+  "category": {
+    "id": "childcare",
+    "name": "子育て",
+    "services": [
+      {
+        "id": "jidou-teate",
+        "name": "児童手当",
+        "url": "https://example.jp/jidou-teate"
+      },
+      {
+        "id": "hoikusho",
+        "name": "保育所入所案内",
+        "url": "https://example.jp/hoikusho"
+      }
+    ]
+  }
+}
