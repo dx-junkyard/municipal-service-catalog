@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+verification_*.png
+verify_frontend.py
+server.log

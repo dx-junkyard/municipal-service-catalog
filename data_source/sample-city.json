@@ -1,0 +1,42 @@
+{
+  "municipality": {
+    "id": "sample-city",
+    "name": "サンプル市",
+    "homepage": "https://example.jp",
+    "last_updated": "2023-10-27"
+  },
+  "categories": [
+    {
+      "id": "childcare",
+      "name": "子育て",
+      "services": [
+        {
+          "id": "jidou-teate",
+          "name": "児童手当",
+          "url": "https://example.jp/jidou-teate"
+        },
+        {
+           "id": "hoikusho",
+           "name": "保育所入所案内",
+           "url": "https://example.jp/hoikusho"
+        }
+      ]
+    },
+    {
+        "id": "disaster-prevention",
+        "name": "防災",
+        "services": [
+            {
+                "id": "map",
+                "name": "防災マップ",
+                "url": "https://example.jp/map"
+            },
+             {
+                "id": "stockpile",
+                "name": "備蓄品情報",
+                "url": "https://example.jp/stockpile"
+            }
+        ]
+    }
+  ]
+}
