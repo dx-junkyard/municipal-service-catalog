@@ -4,62 +4,338 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Municipal Service Catalog</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+            transition: background-color 0.2s;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Municipal Service Catalog</h1>
-            <p>自治体サービスカタログ</p>
+
+    <!-- Header -->
+    <header class="bg-slate-800 text-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="app.router('home')">
+                <i class="fa-solid fa-building-columns text-xl"></i>
+                <h1 class="text-xl font-bold">Municipal Service Catalog</h1>
+            </div>
+            <nav>
+                <a href="#" onclick="app.router('home')" class="text-sm text-slate-300 hover:text-white transition">自治体一覧</a>
+            </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section>
-            <h2>参加自治体一覧</h2>
-            <ul id="municipality-list" class="municipality-list">
-                <!-- List items will be injected here -->
-                <li>読み込み中...</li>
-            </ul>
-        </section>
+    <!-- Main Content -->
+    <main id="app-container" class="container mx-auto px-4 py-8 min-h-screen">
+        <!-- Content will be injected here by JavaScript -->
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; Municipal Service Catalog</p>
+    <!-- Footer -->
+    <footer class="bg-slate-200 text-slate-600 py-6 mt-8">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>&copy; 2026 Municipal Service Catalog Project. All data provided as Open Data.</p>
         </div>
     </footer>
 
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded shadow-lg transform translate-y-20 transition-transform duration-300 z-50">
+        Notification
+    </div>
+
     <script>
-        async function loadMunicipalities() {
-            try {
-                const response = await fetch('data/municipalities.json');
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+        /**
+         * Application Logic
+         */
+        const app = {
+            container: document.getElementById('app-container'),
+            currentMunicipality: null,
+            municipalities: [],
+
+            // Router function to switch views
+            router: async (route, params = null) => {
+                window.scrollTo(0, 0);
+                if (route === 'home') {
+                    // Update URL
+                    const url = new URL(window.location);
+                    url.search = '';
+                    window.history.pushState({}, '', url);
+
+                    if (app.municipalities.length === 0) {
+                         await app.fetchMunicipalities();
+                    }
+                    app.renderHome();
+                } else if (route === 'municipality' && params) {
+                    // Update URL
+                    const url = new URL(window.location);
+                    url.searchParams.set('id', params);
+                    window.history.pushState({}, '', url);
+
+                    await app.renderMunicipality(params);
                 }
-                const data = await response.json();
-                renderList(data);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-                document.getElementById('municipality-list').innerHTML = '<li>データの読み込みに失敗しました。</li>';
-            }
-        }
+            },
 
-        function renderList(data) {
-            const listElement = document.getElementById('municipality-list');
-            listElement.innerHTML = '';
+            fetchMunicipalities: async () => {
+                 try {
+                     const response = await fetch('data/municipalities.json');
+                     if (!response.ok) throw new Error('Failed to load municipalities');
+                     app.municipalities = await response.json();
+                 } catch (error) {
+                     console.error(error);
+                     app.showToast('自治体データの読み込みに失敗しました');
+                 }
+            },
 
-            data.forEach(city => {
-                const li = document.createElement('li');
+            // Utils: Toast notification
+            showToast: (message) => {
+                const toast = document.getElementById('toast');
+                toast.textContent = message;
+                toast.classList.remove('translate-y-20');
+                setTimeout(() => {
+                    toast.classList.add('translate-y-20');
+                }, 3000);
+            },
+
+            // Utils: Download JSON
+            downloadJson: (filename, data) => {
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
-                a.href = `municipality.html?id=${city.id}`;
-                a.textContent = city.name;
-                li.appendChild(a);
-                listElement.appendChild(li);
-            });
-        }
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                app.showToast(`${filename} をダウンロードしました`);
+            },
 
-        document.addEventListener('DOMContentLoaded', loadMunicipalities);
+            downloadCategoryJson: (catId) => {
+                 const cat = app.currentMunicipality.data.categories.find(c => c.id === catId);
+                 if (cat) {
+                     app.downloadJson(`${app.currentMunicipality.id}_${catId}.json`, cat);
+                 }
+            },
+
+            // View: Home (Municipality List)
+            renderHome: () => {
+                app.currentMunicipality = null;
+                let html = `
+                    <div class="text-center mb-10">
+                        <h2 class="text-3xl font-bold text-slate-800 mb-2">自治体サービスカタログ</h2>
+                        <p class="text-slate-600">あなたの街の行政サービスを、もっと見やすく、使いやすく。</p>
+                    </div>
+
+                    <div class="max-w-2xl mx-auto">
+                        <h3 class="text-lg font-semibold text-slate-700 mb-4 px-2 border-l-4 border-blue-500">参加自治体一覧</h3>
+                        <div class="grid gap-4">
+                `;
+
+                if (app.municipalities.length === 0) {
+                    html += `<div class="p-6 text-center text-slate-500">データ読み込み中...</div>`;
+                } else {
+                    app.municipalities.forEach(city => {
+                        html += `
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-200 card cursor-pointer flex justify-between items-center"
+                                 onclick="app.router('municipality', '${city.id}')">
+                                <div class="flex items-center gap-4">
+                                    <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center">
+                                        <i class="fa-solid fa-city"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold text-slate-800">${city.name}</h4>
+                                        <p class="text-sm text-slate-500">データ更新: ${city.last_updated || '不明'}</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-sm text-blue-600 font-bold">詳細を見る <i class="fa-solid fa-chevron-right ml-1"></i></span>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+
+                html += `
+                        </div>
+                        <div class="mt-8 bg-blue-50 p-6 rounded-lg text-sm text-blue-800 border border-blue-100">
+                            <h4 class="font-bold mb-2"><i class="fa-solid fa-circle-info mr-2"></i>このサイトについて</h4>
+                            <p>本サイトは、各自治体の行政サービス情報を標準的なJSON形式で収集・公開する実証実験プロジェクトです。データはGitHub上で管理され、誰でも自由に二次利用可能です。</p>
+                        </div>
+                    </div>
+                `;
+                app.container.innerHTML = html;
+            },
+
+            // View: Municipality Detail
+            renderMunicipality: async (id) => {
+                // Fetch data
+                try {
+                    const res = await fetch(`data/${id}/all.json`);
+                    if (!res.ok) throw new Error('Data not found');
+                    const data = await res.json();
+
+                    const city = {
+                        id: data.municipality.id,
+                        name: data.municipality.name,
+                        homepage: data.municipality.homepage,
+                        updatedAt: data.municipality.last_updated,
+                        data: data // Full data
+                    };
+
+                    app.currentMunicipality = city;
+
+                    const categories = data.categories || [];
+
+                    let html = `
+                        <div class="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                            <div>
+                                <button onclick="app.router('home')" class="text-slate-500 hover:text-blue-600 mb-2 text-sm flex items-center">
+                                    <i class="fa-solid fa-arrow-left mr-1"></i> 一覧に戻る
+                                </button>
+                                <h2 class="text-3xl font-bold text-slate-800 flex items-center">
+                                    ${city.name}
+                                    <a href="${city.homepage}" target="_blank" class="ml-3 text-sm text-blue-500 hover:underline font-normal">
+                                        <i class="fa-solid fa-external-link-alt"></i> 公式HP
+                                    </a>
+                                </h2>
+                                <p class="text-slate-500 text-sm mt-1">最終更新日: ${city.updatedAt}</p>
+                            </div>
+
+                            <!-- Download Buttons Area -->
+                            <div class="flex gap-2">
+                                 <button onclick="app.downloadJson('${city.id}_all.json', app.currentMunicipality.data)"
+                                    class="bg-slate-700 hover:bg-slate-800 text-white px-4 py-2 rounded shadow text-sm flex items-center">
+                                    <i class="fa-solid fa-download mr-2"></i> 全データJSON
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Filter/Search Placeholder -->
+                        <div class="mb-8 relative">
+                            <input type="text" placeholder="キーワードでサービスを検索 (デモ版につき機能制限)" disabled
+                                class="w-full p-3 pl-10 rounded-lg border border-slate-300 bg-slate-50 text-slate-500 cursor-not-allowed">
+                            <i class="fa-solid fa-search absolute left-3 top-3.5 text-slate-400"></i>
+                        </div>
+                    `;
+
+                    if (categories.length === 0) {
+                        html += `<div class="p-8 text-center text-slate-500 bg-white rounded-lg shadow">データがありません。</div>`;
+                    } else {
+                        html += `<div class="grid gap-8">`;
+
+                        categories.forEach(category => {
+                            html += `
+                                <section>
+                                    <div class="flex items-center justify-between border-b-2 border-slate-200 pb-2 mb-4">
+                                        <h3 class="text-xl font-bold text-slate-700 flex items-center">
+                                            <i class="fa-solid fa-folder-open mr-2 text-blue-500"></i> ${category.name}
+                                        </h3>
+                                        <button onclick="app.downloadCategoryJson('${category.id}')"
+                                            class="text-xs bg-white border border-slate-300 hover:bg-slate-50 text-slate-600 px-2 py-1 rounded flex items-center">
+                                            <i class="fa-solid fa-file-code mr-1"></i> JSON
+                                        </button>
+                                    </div>
+                                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            `;
+
+                            category.services.forEach(service => {
+                                const title = service.name;
+                                const url = service.url || '#';
+                                // Try to map fields if they exist, or graceful fallback
+                                const description = service.description || service['サービス内容'] || '';
+                                const tags = service.tags || service['対象者ラベル'] || [];
+                                const serviceLabels = service.serviceLabels || service['サービスラベル'] || [];
+
+                                const tagsHtml = tags.length > 0
+                                    ? '<div class="mb-2">' + tags.map(t => `<span class="badge bg-green-100 text-green-800 mr-1 mb-1">${t}</span>`).join('') + '</div>'
+                                    : '';
+
+                                const serviceLabelsHtml = serviceLabels.length > 0
+                                    ? '<div class="mb-3">' + serviceLabels.map(t => `<span class="badge bg-blue-100 text-blue-800 mr-1 mb-1">${t}</span>`).join('') + '</div>'
+                                    : '';
+
+                                const descHtml = description
+                                    ? `<div class="text-sm text-slate-600 mb-4 flex-grow"><p class="line-clamp-3 mb-2">${description}</p></div>`
+                                    : '<div class="flex-grow"></div>';
+
+                                html += `
+                                    <div class="bg-white rounded-lg shadow border border-slate-200 p-5 flex flex-col h-full card">
+                                        ${serviceLabelsHtml}
+                                        <h4 class="text-lg font-bold text-slate-800 mb-2 leading-tight">
+                                            <a href="${url}" target="_blank" class="hover:text-blue-600 hover:underline">
+                                                ${title}
+                                            </a>
+                                        </h4>
+
+                                        ${descHtml}
+
+                                        <div class="pt-3 border-t border-slate-100 mt-auto">
+                                            ${tagsHtml}
+                                            <div class="text-right">
+                                                <a href="${url}" target="_blank" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800">
+                                                    詳細を見る <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            });
+
+                            html += `
+                                    </div>
+                                </section>
+                            `;
+                        });
+                        html += `</div>`;
+                    }
+
+                    app.container.innerHTML = html;
+                } catch (e) {
+                     console.error(e);
+                     app.container.innerHTML = `<div class="p-8 text-center text-red-500">読み込みエラー: ${e.message}</div>`;
+                }
+            }
+        };
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+            if (id) {
+                app.router('municipality', id);
+            } else {
+                app.router('home');
+            }
+        });
+
     </script>
 </body>
 </html>
