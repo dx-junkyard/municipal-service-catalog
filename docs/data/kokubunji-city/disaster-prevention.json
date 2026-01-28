@@ -1,9 +1,9 @@
 {
   "municipality": {
-    "id": "sample-city",
-    "name": "サンプル市",
-    "homepage": "https://example.jp",
-    "last_updated": "2023-10-27"
+    "id": "kokubunji-city",
+    "name": "国分寺市",
+    "homepage": "https://www.city.kokubunji.tokyo.jp",
+    "last_updated": "2025-10-27"
   },
   "category": {
     "id": "disaster-prevention",
