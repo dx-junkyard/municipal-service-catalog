@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自治体詳細 - Municipal Service Catalog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="index.html">Municipal Service Catalog</a></h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="loading">読み込み中...</div>
+        <div id="content" style="display: none;">
+            <section id="basic-info" class="basic-info">
+                <h2 id="city-name"></h2>
+                <p><a id="city-homepage" href="" target="_blank">公式ホームページ</a></p>
+                <p class="last-updated">最終更新日: <span id="last-updated"></span></p>
+            </section>
+
+            <section id="service-list">
+                <h3>サービス一覧</h3>
+                <div id="categories-container"></div>
+            </section>
+
+            <section id="data-download" class="data-download">
+                <h3>データダウンロード</h3>
+                <ul id="download-links">
+                    <!-- Links injected here -->
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Municipal Service Catalog</p>
+        </div>
+    </footer>
+
+    <script>
+        async function loadMunicipalityData() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
+
+            if (!id) {
+                document.getElementById('loading').textContent = '自治体IDが指定されていません。';
+                return;
+            }
+
+            try {
+                const response = await fetch(`data/${id}/all.json`);
+                if (!response.ok) {
+                    throw new Error('Data not found');
+                }
+                const data = await response.json();
+                renderMunicipality(data);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('loading').textContent = 'データの読み込みに失敗しました。';
+            }
+        }
+
+        function renderMunicipality(data) {
+            const m = data.municipality;
+            document.title = `${m.name} - Municipal Service Catalog`;
+
+            // Basic Info
+            document.getElementById('city-name').textContent = m.name;
+            const hpLink = document.getElementById('city-homepage');
+            hpLink.href = m.homepage;
+            document.getElementById('last-updated').textContent = m.last_updated;
+
+            // Categories
+            const container = document.getElementById('categories-container');
+            container.innerHTML = '';
+
+            data.categories.forEach(cat => {
+                const catSection = document.createElement('div');
+                catSection.className = 'category-section';
+
+                const catTitle = document.createElement('h4');
+                catTitle.textContent = cat.name;
+                catSection.appendChild(catTitle);
+
+                if (cat.services && cat.services.length > 0) {
+                    const ul = document.createElement('ul');
+                    cat.services.forEach(service => {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = service.url;
+                        a.target = '_blank';
+                        a.textContent = service.name;
+                        li.appendChild(a);
+                        ul.appendChild(li);
+                    });
+                    catSection.appendChild(ul);
+                } else {
+                    const p = document.createElement('p');
+                    p.textContent = '登録されているサービスはありません。';
+                    catSection.appendChild(p);
+                }
+
+                container.appendChild(catSection);
+            });
+
+            // Download Links
+            const dlContainer = document.getElementById('download-links');
+            dlContainer.innerHTML = '';
+
+            // All data
+            const liAll = document.createElement('li');
+            const aAll = document.createElement('a');
+            aAll.href = `data/${m.id}/all.json`;
+            aAll.textContent = '全データ (JSON)';
+            aAll.download = `${m.id}-all.json`;
+            liAll.appendChild(aAll);
+            dlContainer.appendChild(liAll);
+
+            // Per category
+            data.categories.forEach(cat => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = `data/${m.id}/${cat.id}.json`;
+                a.textContent = `${cat.name}データ (JSON)`;
+                a.download = `${m.id}-${cat.id}.json`;
+                li.appendChild(a);
+                dlContainer.appendChild(li);
+            });
+
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+
+        document.addEventListener('DOMContentLoaded', loadMunicipalityData);
+    </script>
+</body>
+</html>
