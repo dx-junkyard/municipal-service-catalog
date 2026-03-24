@@ -3,21 +3,26 @@
     "id": "kokubunji-city",
     "name": "国分寺市",
     "homepage": "https://www.city.kokubunji.tokyo.jp",
-    "last_updated": "2025-10-27"
+    "last_updated": "2025-05-28"
   },
   "category": {
     "id": "disaster-prevention",
-    "name": "防災",
+    "name": "防災・災害対応",
     "services": [
       {
-        "id": "map",
+        "id": "svc-1035001",
         "name": "防災マップ",
-        "url": "https://example.jp/map"
-      },
-      {
-        "id": "stockpile",
-        "name": "備蓄品情報",
-        "url": "https://example.jp/stockpile"
+        "url": "https://www.city.kokubunji.tokyo.jp/bosai/1035001",
+        "description": "洪水・土砂災害のハザードマップ、避難所一覧、防災情報を掲載しています。",
+        "tags": [
+          "市民"
+        ],
+        "serviceLabels": [
+          "防災・災害対応"
+        ],
+        "eligibility": "市民全般",
+        "howToApply": "市役所窓口で配布。ホームページからもダウンロード可。",
+        "publishedDate": "2024-10-15"
       }
     ]
   }

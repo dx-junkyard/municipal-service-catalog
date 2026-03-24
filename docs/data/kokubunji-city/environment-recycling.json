@@ -1,0 +1,29 @@
+{
+  "municipality": {
+    "id": "kokubunji-city",
+    "name": "国分寺市",
+    "homepage": "https://www.city.kokubunji.tokyo.jp",
+    "last_updated": "2025-05-28"
+  },
+  "category": {
+    "id": "environment-recycling",
+    "name": "環境・ごみ・リサイクル",
+    "services": [
+      {
+        "id": "svc-1037000",
+        "name": "ごみの分別ガイド",
+        "url": "https://www.city.kokubunji.tokyo.jp/kankyo/1037000",
+        "description": "家庭ごみの分別方法、収集日カレンダー、粗大ごみの申し込み方法をご案内します。",
+        "tags": [
+          "市民"
+        ],
+        "serviceLabels": [
+          "環境・ごみ・リサイクル"
+        ],
+        "eligibility": "市民全般",
+        "howToApply": "ホームページまたは市報で確認。ごみ分別アプリも利用可。",
+        "publishedDate": "2025-04-01"
+      }
+    ]
+  }
+}

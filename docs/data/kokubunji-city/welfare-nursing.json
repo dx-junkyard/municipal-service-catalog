@@ -1,0 +1,30 @@
+{
+  "municipality": {
+    "id": "kokubunji-city",
+    "name": "国分寺市",
+    "homepage": "https://www.city.kokubunji.tokyo.jp",
+    "last_updated": "2025-05-28"
+  },
+  "category": {
+    "id": "welfare-nursing",
+    "name": "福祉・介護",
+    "services": [
+      {
+        "id": "svc-1038100",
+        "name": "介護保険サービス",
+        "url": "https://www.city.kokubunji.tokyo.jp/fukushi/1038100",
+        "description": "居宅介護、施設介護、介護予防などのサービスを利用できます。利用者負担は原則1割。",
+        "tags": [
+          "高齢者",
+          "障がい者"
+        ],
+        "serviceLabels": [
+          "福祉・介護"
+        ],
+        "eligibility": "要介護・要支援認定を受けた方",
+        "howToApply": "まず要介護認定の申請が必要。市役所介護保険課で受付。",
+        "publishedDate": "2019-08-01"
+      }
+    ]
+  }
+}

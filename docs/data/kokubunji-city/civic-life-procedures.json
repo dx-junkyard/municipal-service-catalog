@@ -1,0 +1,29 @@
+{
+  "municipality": {
+    "id": "kokubunji-city",
+    "name": "国分寺市",
+    "homepage": "https://www.city.kokubunji.tokyo.jp",
+    "last_updated": "2025-05-28"
+  },
+  "category": {
+    "id": "civic-life-procedures",
+    "name": "市民生活・手続き",
+    "services": [
+      {
+        "id": "svc-1039000",
+        "name": "住民票の写しの交付",
+        "url": "https://www.city.kokubunji.tokyo.jp/shiminseikatsu/1039000",
+        "description": "住民票の写し、住民票記載事項証明書の交付を行います。手数料300円。",
+        "tags": [
+          "市民"
+        ],
+        "serviceLabels": [
+          "市民生活・手続き"
+        ],
+        "eligibility": "国分寺市に住民登録がある方",
+        "howToApply": "市役所窓口またはコンビニ交付サービスで取得可能。マイナンバーカード必要。",
+        "publishedDate": "2025-01-15"
+      }
+    ]
+  }
+}
