@@ -3,38 +3,150 @@
     "id": "kokubunji-city",
     "name": "国分寺市",
     "homepage": "https://www.city.kokubunji.tokyo.jp",
-    "last_updated": "2025-10-27"
+    "last_updated": "2025-05-28"
   },
   "categories": [
     {
-      "id": "childcare",
-      "name": "子育て",
+      "id": "childcare-education",
+      "name": "子育て・教育",
       "services": [
         {
-          "id": "jidou-teate",
+          "id": "svc-1034323",
           "name": "児童手当",
-          "url": "https://example.jp/jidou-teate"
+          "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1034323",
+          "description": "中学校修了前の児童1人につき月額10,000円〜15,000円を支給します。所得制限あり。",
+          "tags": [
+            "保護者"
+          ],
+          "serviceLabels": [
+            "子育て・教育",
+            "補助金・助成金"
+          ],
+          "eligibility": "中学校修了前の児童を養育している方",
+          "howToApply": "出生届と同時に申請。毎年6月に現況届を提出。",
+          "publishedDate": "2025-05-28"
         },
         {
-          "id": "hoikusho",
+          "id": "svc-1034500",
           "name": "保育所入所案内",
-          "url": "https://example.jp/hoikusho"
+          "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1034500",
+          "description": "市内認可保育所の入所手続き、空き状況、保育料の案内を行います。",
+          "tags": [
+            "保護者"
+          ],
+          "serviceLabels": [
+            "子育て・教育"
+          ],
+          "eligibility": "就学前の児童の保護者",
+          "howToApply": "毎年11月に翌年4月入所の一斉申込を受付。随時入所も可。",
+          "publishedDate": "2025-04-01"
         }
       ]
     },
     {
       "id": "disaster-prevention",
-      "name": "防災",
+      "name": "防災・災害対応",
       "services": [
         {
-          "id": "map",
+          "id": "svc-1035001",
           "name": "防災マップ",
-          "url": "https://example.jp/map"
-        },
+          "url": "https://www.city.kokubunji.tokyo.jp/bosai/1035001",
+          "description": "洪水・土砂災害のハザードマップ、避難所一覧、防災情報を掲載しています。",
+          "tags": [
+            "市民"
+          ],
+          "serviceLabels": [
+            "防災・災害対応"
+          ],
+          "eligibility": "市民全般",
+          "howToApply": "市役所窓口で配布。ホームページからもダウンロード可。",
+          "publishedDate": "2024-10-15"
+        }
+      ]
+    },
+    {
+      "id": "health-medical",
+      "name": "健康・医療",
+      "services": [
         {
-          "id": "stockpile",
-          "name": "備蓄品情報",
-          "url": "https://example.jp/stockpile"
+          "id": "svc-1036200",
+          "name": "高齢者インフルエンザ予防接種",
+          "url": "https://www.city.kokubunji.tokyo.jp/kenko/1036200",
+          "description": "65歳以上の方を対象に、インフルエンザ予防接種費用の一部を助成します。",
+          "tags": [
+            "高齢者"
+          ],
+          "serviceLabels": [
+            "健康・医療",
+            "福祉・介護"
+          ],
+          "eligibility": "65歳以上の市民",
+          "howToApply": "指定医療機関に直接予約。接種費用の一部を市が助成。",
+          "publishedDate": "2025-03-01"
+        }
+      ]
+    },
+    {
+      "id": "environment-recycling",
+      "name": "環境・ごみ・リサイクル",
+      "services": [
+        {
+          "id": "svc-1037000",
+          "name": "ごみの分別ガイド",
+          "url": "https://www.city.kokubunji.tokyo.jp/kankyo/1037000",
+          "description": "家庭ごみの分別方法、収集日カレンダー、粗大ごみの申し込み方法をご案内します。",
+          "tags": [
+            "市民"
+          ],
+          "serviceLabels": [
+            "環境・ごみ・リサイクル"
+          ],
+          "eligibility": "市民全般",
+          "howToApply": "ホームページまたは市報で確認。ごみ分別アプリも利用可。",
+          "publishedDate": "2025-04-01"
+        }
+      ]
+    },
+    {
+      "id": "welfare-nursing",
+      "name": "福祉・介護",
+      "services": [
+        {
+          "id": "svc-1038100",
+          "name": "介護保険サービス",
+          "url": "https://www.city.kokubunji.tokyo.jp/fukushi/1038100",
+          "description": "居宅介護、施設介護、介護予防などのサービスを利用できます。利用者負担は原則1割。",
+          "tags": [
+            "高齢者",
+            "障がい者"
+          ],
+          "serviceLabels": [
+            "福祉・介護"
+          ],
+          "eligibility": "要介護・要支援認定を受けた方",
+          "howToApply": "まず要介護認定の申請が必要。市役所介護保険課で受付。",
+          "publishedDate": "2019-08-01"
+        }
+      ]
+    },
+    {
+      "id": "civic-life-procedures",
+      "name": "市民生活・手続き",
+      "services": [
+        {
+          "id": "svc-1039000",
+          "name": "住民票の写しの交付",
+          "url": "https://www.city.kokubunji.tokyo.jp/shiminseikatsu/1039000",
+          "description": "住民票の写し、住民票記載事項証明書の交付を行います。手数料300円。",
+          "tags": [
+            "市民"
+          ],
+          "serviceLabels": [
+            "市民生活・手続き"
+          ],
+          "eligibility": "国分寺市に住民登録がある方",
+          "howToApply": "市役所窓口またはコンビニ交付サービスで取得可能。マイナンバーカード必要。",
+          "publishedDate": "2025-01-15"
         }
       ]
     }

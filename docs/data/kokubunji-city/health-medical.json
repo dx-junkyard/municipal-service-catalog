@@ -1,0 +1,30 @@
+{
+  "municipality": {
+    "id": "kokubunji-city",
+    "name": "国分寺市",
+    "homepage": "https://www.city.kokubunji.tokyo.jp",
+    "last_updated": "2025-05-28"
+  },
+  "category": {
+    "id": "health-medical",
+    "name": "健康・医療",
+    "services": [
+      {
+        "id": "svc-1036200",
+        "name": "高齢者インフルエンザ予防接種",
+        "url": "https://www.city.kokubunji.tokyo.jp/kenko/1036200",
+        "description": "65歳以上の方を対象に、インフルエンザ予防接種費用の一部を助成します。",
+        "tags": [
+          "高齢者"
+        ],
+        "serviceLabels": [
+          "健康・医療",
+          "福祉・介護"
+        ],
+        "eligibility": "65歳以上の市民",
+        "howToApply": "指定医療機関に直接予約。接種費用の一部を市が助成。",
+        "publishedDate": "2025-03-01"
+      }
+    ]
+  }
+}

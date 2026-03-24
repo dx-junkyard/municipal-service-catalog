@@ -37,6 +37,24 @@
             border-radius: 9999px;
             font-weight: 600;
         }
+        .category-services {
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            overflow: hidden;
+        }
+        .category-services.collapsed {
+            max-height: 0 !important;
+            opacity: 0;
+        }
+        .accordion-content {
+            transition: max-height 0.3s ease, opacity 0.3s ease;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+        }
+        .accordion-content.open {
+            max-height: 500px;
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -79,6 +97,7 @@
             container: document.getElementById('app-container'),
             currentMunicipality: null,
             municipalities: [],
+            searchQuery: '',
 
             // Router function to switch views
             router: async (route, params = null) => {
@@ -145,9 +164,66 @@
                  }
             },
 
+            // Filter services by search query
+            filterServices: (query) => {
+                app.searchQuery = query.toLowerCase();
+                const categorySections = document.querySelectorAll('[data-category-section]');
+
+                categorySections.forEach(section => {
+                    const cards = section.querySelectorAll('[data-service-card]');
+                    let visibleCount = 0;
+
+                    cards.forEach(card => {
+                        const name = (card.dataset.name || '').toLowerCase();
+                        const description = (card.dataset.description || '').toLowerCase();
+                        const tags = (card.dataset.tags || '').toLowerCase();
+
+                        if (!app.searchQuery || name.includes(app.searchQuery) || description.includes(app.searchQuery) || tags.includes(app.searchQuery)) {
+                            card.style.display = '';
+                            visibleCount++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    // Hide category if no visible services
+                    section.style.display = visibleCount === 0 ? 'none' : '';
+                });
+            },
+
+            // Toggle category collapse/expand
+            toggleCategory: (categoryId) => {
+                const servicesContainer = document.getElementById(`cat-services-${categoryId}`);
+                const icon = document.getElementById(`cat-icon-${categoryId}`);
+                if (servicesContainer) {
+                    servicesContainer.classList.toggle('collapsed');
+                    if (icon) {
+                        icon.classList.toggle('fa-chevron-down');
+                        icon.classList.toggle('fa-chevron-up');
+                    }
+                }
+            },
+
+            // Toggle service detail accordion
+            toggleDetail: (serviceId) => {
+                const content = document.getElementById(`detail-${serviceId}`);
+                const btn = document.getElementById(`detail-btn-${serviceId}`);
+                if (content) {
+                    content.classList.toggle('open');
+                    if (btn) {
+                        if (content.classList.contains('open')) {
+                            btn.innerHTML = '詳細を閉じる <i class="fa-solid fa-chevron-up ml-1 text-xs"></i>';
+                        } else {
+                            btn.innerHTML = '詳細を開く <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>';
+                        }
+                    }
+                }
+            },
+
             // View: Home (Municipality List)
             renderHome: () => {
                 app.currentMunicipality = null;
+                app.searchQuery = '';
                 let html = `
                     <div class="text-center mb-10">
                         <h2 class="text-3xl font-bold text-slate-800 mb-2">自治体サービスカタログ</h2>
@@ -238,10 +314,11 @@
                             </div>
                         </div>
 
-                        <!-- Filter/Search Placeholder -->
+                        <!-- Search Bar -->
                         <div class="mb-8 relative">
-                            <input type="text" placeholder="キーワードでサービスを検索 (デモ版につき機能制限)" disabled
-                                class="w-full p-3 pl-10 rounded-lg border border-slate-300 bg-slate-50 text-slate-500 cursor-not-allowed">
+                            <input type="text" placeholder="キーワードでサービスを検索（名前・説明・タグ）"
+                                oninput="app.filterServices(this.value)"
+                                class="w-full p-3 pl-10 rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400">
                             <i class="fa-solid fa-search absolute left-3 top-3.5 text-slate-400"></i>
                         </div>
                     `;
@@ -252,27 +329,36 @@
                         html += `<div class="grid gap-8">`;
 
                         categories.forEach(category => {
+                            const serviceCount = category.services ? category.services.length : 0;
+
                             html += `
-                                <section>
-                                    <div class="flex items-center justify-between border-b-2 border-slate-200 pb-2 mb-4">
+                                <section data-category-section>
+                                    <div class="flex items-center justify-between border-b-2 border-slate-200 pb-2 mb-4 cursor-pointer"
+                                         onclick="app.toggleCategory('${category.id}')">
                                         <h3 class="text-xl font-bold text-slate-700 flex items-center">
                                             <i class="fa-solid fa-folder-open mr-2 text-blue-500"></i> ${category.name}
+                                            <span class="bg-blue-100 text-blue-600 text-sm px-2 py-0.5 rounded-full ml-2">${serviceCount}</span>
+                                            <i id="cat-icon-${category.id}" class="fa-solid fa-chevron-up ml-3 text-sm text-slate-400"></i>
                                         </h3>
-                                        <button onclick="app.downloadCategoryJson('${category.id}')"
+                                        <button onclick="event.stopPropagation(); app.downloadCategoryJson('${category.id}')"
                                             class="text-xs bg-white border border-slate-300 hover:bg-slate-50 text-slate-600 px-2 py-1 rounded flex items-center">
                                             <i class="fa-solid fa-file-code mr-1"></i> JSON
                                         </button>
                                     </div>
-                                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                    <div id="cat-services-${category.id}" class="category-services">
+                                        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                             `;
 
                             category.services.forEach(service => {
                                 const title = service.name;
                                 const url = service.url || '#';
-                                // Try to map fields if they exist, or graceful fallback
                                 const description = service.description || service['サービス内容'] || '';
                                 const tags = service.tags || service['対象者ラベル'] || [];
                                 const serviceLabels = service.serviceLabels || service['サービスラベル'] || [];
+                                const eligibility = service.eligibility || '';
+                                const howToApply = service.howToApply || '';
+                                const hasDetails = eligibility || howToApply;
+                                const serviceId = service.id || title.replace(/\s+/g, '-');
 
                                 const tagsHtml = tags.length > 0
                                     ? '<div class="mb-2">' + tags.map(t => `<span class="badge bg-green-100 text-green-800 mr-1 mb-1">${t}</span>`).join('') + '</div>'
@@ -286,8 +372,29 @@
                                     ? `<div class="text-sm text-slate-600 mb-4 flex-grow"><p class="line-clamp-3 mb-2">${description}</p></div>`
                                     : '<div class="flex-grow"></div>';
 
+                                // Escape data attributes
+                                const safeDescription = description.replace(/"/g, '&quot;');
+                                const safeTags = tags.join(',').replace(/"/g, '&quot;');
+
+                                let detailHtml = '';
+                                if (hasDetails) {
+                                    detailHtml = `
+                                        <button id="detail-btn-${serviceId}" onclick="event.preventDefault(); app.toggleDetail('${serviceId}')"
+                                            class="text-xs text-blue-600 hover:text-blue-800 font-semibold mt-2 inline-flex items-center">
+                                            詳細を開く <i class="fa-solid fa-chevron-down ml-1 text-xs"></i>
+                                        </button>
+                                        <div id="detail-${serviceId}" class="accordion-content">
+                                            <div class="bg-slate-50 p-3 rounded text-sm text-slate-700 mt-2">
+                                                ${eligibility ? `<div class="mb-2"><span class="font-semibold">対象者:</span> ${eligibility}</div>` : ''}
+                                                ${howToApply ? `<div><span class="font-semibold">申し込み方法:</span> ${howToApply}</div>` : ''}
+                                            </div>
+                                        </div>
+                                    `;
+                                }
+
                                 html += `
-                                    <div class="bg-white rounded-lg shadow border border-slate-200 p-5 flex flex-col h-full card">
+                                    <div class="bg-white rounded-lg shadow border border-slate-200 p-5 flex flex-col h-full card"
+                                         data-service-card data-name="${title}" data-description="${safeDescription}" data-tags="${safeTags}">
                                         ${serviceLabelsHtml}
                                         <h4 class="text-lg font-bold text-slate-800 mb-2 leading-tight">
                                             <a href="${url}" target="_blank" class="hover:text-blue-600 hover:underline">
@@ -299,6 +406,7 @@
 
                                         <div class="pt-3 border-t border-slate-100 mt-auto">
                                             ${tagsHtml}
+                                            ${detailHtml}
                                             <div class="text-right">
                                                 <a href="${url}" target="_blank" class="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-800">
                                                     詳細を見る <i class="fa-solid fa-arrow-up-right-from-square ml-1 text-xs"></i>
@@ -310,6 +418,7 @@
                             });
 
                             html += `
+                                        </div>
                                     </div>
                                 </section>
                             `;

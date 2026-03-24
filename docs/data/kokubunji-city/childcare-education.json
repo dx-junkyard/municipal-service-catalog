@@ -1,0 +1,45 @@
+{
+  "municipality": {
+    "id": "kokubunji-city",
+    "name": "国分寺市",
+    "homepage": "https://www.city.kokubunji.tokyo.jp",
+    "last_updated": "2025-05-28"
+  },
+  "category": {
+    "id": "childcare-education",
+    "name": "子育て・教育",
+    "services": [
+      {
+        "id": "svc-1034323",
+        "name": "児童手当",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1034323",
+        "description": "中学校修了前の児童1人につき月額10,000円〜15,000円を支給します。所得制限あり。",
+        "tags": [
+          "保護者"
+        ],
+        "serviceLabels": [
+          "子育て・教育",
+          "補助金・助成金"
+        ],
+        "eligibility": "中学校修了前の児童を養育している方",
+        "howToApply": "出生届と同時に申請。毎年6月に現況届を提出。",
+        "publishedDate": "2025-05-28"
+      },
+      {
+        "id": "svc-1034500",
+        "name": "保育所入所案内",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1034500",
+        "description": "市内認可保育所の入所手続き、空き状況、保育料の案内を行います。",
+        "tags": [
+          "保護者"
+        ],
+        "serviceLabels": [
+          "子育て・教育"
+        ],
+        "eligibility": "就学前の児童の保護者",
+        "howToApply": "毎年11月に翌年4月入所の一斉申込を受付。随時入所も可。",
+        "publishedDate": "2025-04-01"
+      }
+    ]
+  }
+}
