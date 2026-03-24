@@ -1,0 +1,46 @@
+{
+  "municipality": {
+    "id": "kokubunji-city",
+    "name": "国分寺市",
+    "homepage": "https://www.city.kokubunji.tokyo.jp",
+    "last_updated": "なし"
+  },
+  "category": {
+    "id": "water-sewage",
+    "name": "水道・上下水道",
+    "services": [
+      {
+        "id": "svc-1011327-91",
+        "name": "下水道に放流している排水の測定結果",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011327/1011331/1002232.html",
+        "description": "リンク集",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "水道・上下水道",
+          "環境・ごみ・リサイクル"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2025-09-25"
+      },
+      {
+        "id": "svc-1011090-60",
+        "name": "有機フッ素化合物（PFOS及びPFOA）について",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011391/1031062.html",
+        "description": "国分寺市の水道水は東京都水道局により徹底した水質管理が行われ、PFOS・PFOAは暫定目標値（合算50ng/L以下）を下回っています。市内の配水元は北町給水所・東恋ヶ窪配水所（府中武蔵台浄水所の一部を含む）で、直近の検査結果（令和7年度4〜6月）はPFOS・PFOA合計およびPFHxSともに＜5ng/Lです（配水系統の給水栓番号：75 府中武蔵台浄水所、97 東恋ヶ窪配水所、98 北町給水所）。東京都・国の関連情報への案内も掲載。市の対応として、東京都水道局へ検査継続・公表等を要請し、市管理の「むかしの井戸」（飲用不可）および「真姿の池」湧水の調査結果を公開。令和7年2月の井戸25か所調査では6か所で指針値（暫定）50ng/L超、令和6年11月の真姿の池はPFOS+PFOA 14ng/L、PFHxS 4ng/L。今後も経年変化確認のため継続調査を実施。問い合わせ：建設環境部 環境対策課（電話 042-328-2191）。",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "水道・上下水道",
+          "環境・ごみ・リサイクル"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2025-09-19"
+      }
+    ]
+  }
+}
