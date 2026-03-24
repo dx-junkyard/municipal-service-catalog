@@ -1,0 +1,46 @@
+{
+  "municipality": {
+    "id": "kokubunji-city",
+    "name": "国分寺市",
+    "homepage": "https://www.city.kokubunji.tokyo.jp",
+    "last_updated": "なし"
+  },
+  "category": {
+    "id": "industry-business",
+    "name": "産業・事業者支援",
+    "services": [
+      {
+        "id": "svc-1011090-77",
+        "name": "工場を設置するとき",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011391/1002404.html",
+        "description": "工場を新設・変更する際に必要となる許可・認可・届出に関する案内です。対象となる行為（設置、名称変更、建物・施設の構造や配置変更）に応じた手続きが求められます。申請書類は「工場および指定作業場に関する申請書類」（https://www.city.kokubunji.tokyo.jp/download/kankyou/1004688.html）から入手可能です。問い合わせ先：建設環境部 環境対策課 環境対策係（電話 042-328-2191、FAX 042-325-1380）。",
+        "tags": [
+          "事業者"
+        ],
+        "serviceLabels": [
+          "産業・事業者支援",
+          "環境・ごみ・リサイクル"
+        ],
+        "eligibility": "工場を設置しようとするかた、または既に設置している工場の名称・建物・施設の構造や配置を変更しようとするかた",
+        "howToApply": "東京都環境確保条例に基づき、工場の設置前に許可申請が必要です。既設工場の名称・建物・施設の構造や配置を変更する場合は、変更の認可または届出が必要です。申請に必要な書類は「工場および指定作業場に関する申請書類」ページから入手し、所定の手続きを行ってください。",
+        "publishedDate": "2014-09-15"
+      },
+      {
+        "id": "svc-1011090-126",
+        "name": "事業者向け再エネ電力共同購入のご案内",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1030856/1034658.html",
+        "description": "リンク集",
+        "tags": [
+          "事業者"
+        ],
+        "serviceLabels": [
+          "産業・事業者支援",
+          "環境・ごみ・リサイクル"
+        ],
+        "eligibility": "市内事業所・事業者",
+        "howToApply": "なし",
+        "publishedDate": "2025-07-24"
+      }
+    ]
+  }
+}

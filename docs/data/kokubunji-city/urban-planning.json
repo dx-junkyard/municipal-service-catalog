@@ -1,0 +1,321 @@
+{
+  "municipality": {
+    "id": "kokubunji-city",
+    "name": "国分寺市",
+    "homepage": "https://www.city.kokubunji.tokyo.jp",
+    "last_updated": "なし"
+  },
+  "category": {
+    "id": "urban-planning",
+    "name": "まちづくり・都市整備",
+    "services": [
+      {
+        "id": "svc-1011090",
+        "name": "新町一丁目緑地整備に関する市民懇談会の資料を掲示します。",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1032268.html",
+        "description": "リンク集",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2025-08-26"
+      },
+      {
+        "id": "svc-1011090-2",
+        "name": "新町一丁目緑地整備に関する市民懇談会を開催します（終了しました）。",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1032268.html",
+        "description": "令和6年度の都市計画決定を受け、整備に向けた検討の参考とするための市民懇談会。日時：（1）令和7年8月20日（水曜日）18:30～19:30、（2）令和7年8月23日（土曜日）13:30～14:30（同一内容）。会場：国分寺市立並木公民館 講座室。内容：都市計画緑地「新町一丁目緑地」の整備について。開催は終了しました。",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "市民の皆様",
+        "howToApply": "申込みの必要はありません。",
+        "publishedDate": "2025-08-26"
+      },
+      {
+        "id": "svc-1011090-3",
+        "name": "国分寺都市計画緑地に第6号新町一丁目緑地が追加されました。",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1032268.html",
+        "description": "都市計画法に基づき、国分寺都市計画緑地の変更（第6号 新町一丁目緑地の追加）を告示し、縦覧に供しています。縦覧場所：まちづくり計画課。",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション",
+          "行政運営・計画・評価"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2025-08-26"
+      },
+      {
+        "id": "svc-1011090-4",
+        "name": "新町一丁目緑地都市計画案の説明会の会議資料を掲示します。",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1032268.html",
+        "description": "リンク集",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2025-08-26"
+      },
+      {
+        "id": "svc-1011090-5",
+        "name": "新町一丁目緑地都市計画案の説明会を開催します（終了しました）。",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1032268.html",
+        "description": "新町一丁目緑地の都市計画案に関する説明会（開催は終了しました）。",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2025-08-26"
+      },
+      {
+        "id": "svc-1011090-6",
+        "name": "公聴会の開催（中止しました）",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1032268.html",
+        "description": "新町一丁目緑地都市計画原案に対する公述の申出書の提出がなかったため、7月23日開催予定の公聴会を中止しました。",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "行政運営・計画・評価"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2025-08-26"
+      },
+      {
+        "id": "svc-1011090-7",
+        "name": "新町一丁目緑地都市計画原案の説明会の会議資料を掲示します。",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1032268.html",
+        "description": "リンク集",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2025-08-26"
+      },
+      {
+        "id": "svc-1011090-8",
+        "name": "新町一丁目緑地都市計画原案の説明会を開催します（終了しました）。",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1032268.html",
+        "description": "新町一丁目緑地の都市計画原案に関する説明会（開催は終了しました）。公述申出書の様式（Word/PDF）を掲載。",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "行政運営・計画・評価",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "公聴会で公述を希望する場合は所定の「公述申出書」を提出してください。",
+        "publishedDate": "2025-08-26"
+      },
+      {
+        "id": "svc-1011090-9",
+        "name": "都市計画緑地決定に伴う懇談会の会議資料を掲示します。",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1032268.html",
+        "description": "リンク集",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2025-08-26"
+      },
+      {
+        "id": "svc-1011090-10",
+        "name": "都市計画緑地決定に伴う懇談会を開催します。",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1032268.html",
+        "description": "開催日時：令和6年5月9日（木曜日）18:30～19:30。開催場所：国分寺市役所 書庫棟会議室。内容：都市計画緑地決定に伴う懇談会。",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2025-08-26"
+      },
+      {
+        "id": "svc-1011090-11",
+        "name": "西町五丁目緑地都市計画案の説明会を開催します。（令和7年9月12日掲載）（終了しました。）",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1034179.html",
+        "description": "都市計画案の説明会（国分寺市立第八小学校東側の緑地に関する都市計画緑地の範囲決定）を開催。開催日時：令和7年10月9日（木）18:30～19:30／開催場所：西町プラザ（西町3-22-1）内 西町地域センター2階集会室。併せて都市計画案の縦覧・意見書の提出を実施。種類・名称：国分寺都市計画緑地西町五丁目緑地／縦覧期間：令和7年10月2日（木）～10月22日（水）（土・日・祝を除く8:30～17:15）／縦覧場所：市役所3階 緑と公園課。問合せ：建設環境部 緑と公園課 公園緑地係（電話：042-312-8677）。",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "行政運営・計画・評価"
+        ],
+        "eligibility": "市民の皆様",
+        "howToApply": "意見書の提出方法：種類・名称、意見、住所、氏名を記入のうえ、10月22日（水）までに郵送（消印有効）、メール midorikouen@city.kokubunji.tokyo.jp、または緑と公園課へ持参（土・日・祝を除く8:30～17:15）。意見書の様式指定なし。郵送先：〒185-8501 国分寺市泉町2-2-18 緑と公園課 宛。",
+        "publishedDate": "2025-09-12"
+      },
+      {
+        "id": "svc-1011090-19",
+        "name": "工事説明会を開催します（終了しました）",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1028512.html",
+        "description": "都市計画公園 戸倉公園の整備に伴う工事説明会。日時：令和6年7月27日（土曜日）10時00分～11時00分。場所：書庫棟会議室。資料：工事説明会資料（PDF 2.3MB）https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/028/512/tokurakoujisetsumeikai.pdf",
+        "tags": [
+          "その他"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "申込み不要",
+        "publishedDate": "2024-08-28"
+      },
+      {
+        "id": "svc-1011090-20",
+        "name": "市民説明会を開催します（終了しました）",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1028512.html",
+        "description": "都市計画公園 戸倉公園の整備に伴う市民説明会。日時：令和5年9月14日（木曜日）18時30分～19時30分、令和5年9月16日（土曜日）14時～15時（議題は同じ）。場所：書庫棟会議室。資料：市民説明会資料（PDF 2.6MB）https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/028/512/siminsetumeikaisiryou.pdf",
+        "tags": [
+          "その他"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "申込み不要",
+        "publishedDate": "2024-08-28"
+      },
+      {
+        "id": "svc-1011090-21",
+        "name": "国分寺都市計画公園「戸倉公園」の事業計画の関係図書の縦覧",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1028512.html",
+        "description": "東京都が令和4年10月14日付で認可告示した事業計画に関する関係図書の縦覧（都市計画法第62条第2項に基づく）。縦覧場所：緑と建築課（市役所第2庁舎2階）。",
+        "tags": [
+          "その他"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2024-08-28"
+      },
+      {
+        "id": "svc-1011090-22",
+        "name": "市民の意見を募集します。",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1028512.html",
+        "description": "令和4年8月18日・20日の市民懇談会に参加できなかった方からも、戸倉公園の整備に関する自由な意見を募集。参考資料：市民懇談会資料（PDF 3.9MB）https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/028/512/tokurakkondankai-.pdf。注：イメージ図は仮配置であり決定図ではない。設計は翌年度予定。",
+        "tags": [
+          "その他"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "募集期間：令和4年9月25日（日曜日）まで。提出方法：メール（midorikenchiku@city.kokubunji.tokyo.jp）またはファクス（042-324-0160）。氏名の記入は不要。お住まいの地域（例：戸倉〇丁目）の記入をお願い。連絡先：緑と建築課 公園緑地係宛。",
+        "publishedDate": "2024-08-28"
+      },
+      {
+        "id": "svc-1011090-23",
+        "name": "市民懇談会を開催します。",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1028512.html",
+        "description": "都市計画公園 戸倉公園の整備に関する市民懇談会。日時：令和4年8月18日（木曜日）18時30分～19時30分、8月20日（土曜日）14時～15時（議題は同じ）。場所：福祉センター 第1会議室。注記：市報での所在地表記の誤りについて訂正（正：戸倉四丁目16番地）。",
+        "tags": [
+          "その他"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "なし",
+        "howToApply": "申込み不要",
+        "publishedDate": "2024-08-28"
+      },
+      {
+        "id": "svc-1011090-33",
+        "name": "国分寺市まちづくり条例に規定する開発事業における敷地内の緑化について",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011091/1002386.html",
+        "description": "リンク集",
+        "tags": [
+          "事業者"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "国分寺市まちづくり条例に規定する開発事業に該当し、敷地内の緑化が必要となる事業者",
+        "howToApply": "なし",
+        "publishedDate": "2024-03-22"
+      },
+      {
+        "id": "svc-1011090-42",
+        "name": "第6号新町一丁目緑地",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011095/1017758.html",
+        "description": "令和6年12月16日付で、国分寺都市計画緑地第6号新町一丁目緑地を「都市計画公園・緑地の整備方針（令和2年7月改定）」における優先整備区域の拡大として決定。関連資料：国分寺都市計画緑地第6号新町一丁目緑地 優先整備区域を表示する図面（PDF 381.3KB）https://www.city.kokubunji.tokyo.jp/_res/projects/default_project/_page_/001/017/758/sinmatisyuusen.pdf",
+        "tags": [
+          "その他（該当が不明な場合）"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション",
+          "行政運営・計画・評価"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2025-01-09"
+      },
+      {
+        "id": "svc-1011090-45",
+        "name": "第1回まちづくりと野川に関する懇談会を開催しました",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011095/1010255.html",
+        "description": "市は『国分寺市緑の基本計画2011』で野川を「水の骨格軸」と位置付け、治水機能の向上・生物多様性の確保・親水空間化に向けた整備について意見を伺う場として懇談会を開催。日時：平成27年7月29日（水曜日）午後6時〜午後7時30分／場所：もとまち公民館視聴覚室。懇談会の資料および開催概要のPDFリンクあり。",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "まちづくり・都市整備",
+          "公園・緑地・レクリエーション"
+        ],
+        "eligibility": "市民の皆さん（野川整備やまちづくりに関心のある方）",
+        "howToApply": "なし",
+        "publishedDate": "2023-11-24"
+      }
+    ]
+  }
+}

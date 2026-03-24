@@ -1,0 +1,45 @@
+{
+  "municipality": {
+    "id": "kokubunji-city",
+    "name": "国分寺市",
+    "homepage": "https://www.city.kokubunji.tokyo.jp",
+    "last_updated": "なし"
+  },
+  "category": {
+    "id": "consumer-affairs",
+    "name": "消費生活・トラブル対応",
+    "services": [
+      {
+        "id": "svc-1010836-81",
+        "name": "マイナンバー制度に便乗した不正な勧誘や個人情報の取得にご注意ください！",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1010836/1008536/1010262.html",
+        "description": "マイナンバー制度を装った詐欺・不正勧誘への注意喚起。国の機関や自治体が口座番号・暗証番号・資産情報等を尋ねたり、お金やキャッシュカードの提供、ATM操作を依頼することは一切ない。送付者不明の封筒やメールの安易な開封は控える。通知カード・個人番号カード申請に関する正規の郵送形態（簡易書留・転送不要、代金請求なし、申請書の宛先は「地方公共団体情報システム機構」）を確認。「名前やマイナンバーを貸して」などの依頼は詐欺の手口であり、他人のマイナンバー取得は法令違反。相談先として国分寺市消費生活相談室を案内。",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "消費生活・トラブル対応",
+          "市民生活・手続き"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2018-09-18"
+      },
+      {
+        "id": "svc-1011466",
+        "name": "聴覚に障害のあるかた向けの消費生活相談について",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/syougaishien/1011466/1023609.html",
+        "description": "東京都消費生活相談センターが、品物の購入やサービス契約時のトラブル等に関する消費生活相談を、聴覚障害などで電話相談が難しい方向けにメールで受け付け。回答は原則1回で、内容により来所相談の案内あり（家族・福祉関係者等の同席可）。詳細： https://www.shouhiseikatu.metro.tokyo.jp/sodan/sodan_syuwa.html",
+        "tags": [
+          "障がい者"
+        ],
+        "serviceLabels": [
+          "消費生活・トラブル対応"
+        ],
+        "eligibility": "都内に在住・在勤・在学で聴覚に障害があるかた（電話による相談がしづらいかた）",
+        "howToApply": "メールでの新規相談のみ受付（回答は1回限り）。回答まで約1週間かかる場合あり。契約書類等の確認が必要な場合や急ぎ・詳しい相談は来所相談を利用。利用方法の詳細および申込みは、東京都消費生活相談センターの案内ページ（https://www.shouhiseikatu.metro.tokyo.jp/sodan/sodan_syuwa.html）を参照。",
+        "publishedDate": "2020-06-15"
+      }
+    ]
+  }
+}

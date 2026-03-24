@@ -1,0 +1,29 @@
+{
+  "municipality": {
+    "id": "kokubunji-city",
+    "name": "国分寺市",
+    "homepage": "https://www.city.kokubunji.tokyo.jp",
+    "last_updated": "なし"
+  },
+  "category": {
+    "id": "others",
+    "name": "その他",
+    "services": [
+      {
+        "id": "svc-1011090-63",
+        "name": "国分寺市役所（恋ヶ窪）喫煙ポイントの休止のお知らせ",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011391/1033342.html",
+        "description": "令和6年12月27日、国分寺市役所（恋ヶ窪）の解体等に伴い、庁舎敷地内の喫煙ポイントを休止。工事期間中は利用できません。",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "その他"
+        ],
+        "eligibility": "国分寺市役所（恋ヶ窪）喫煙ポイントの利用者",
+        "howToApply": "なし",
+        "publishedDate": "2025-01-10"
+      }
+    ]
+  }
+}

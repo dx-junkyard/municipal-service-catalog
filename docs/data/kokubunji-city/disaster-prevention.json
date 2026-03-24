@@ -3,26 +3,119 @@
     "id": "kokubunji-city",
     "name": "国分寺市",
     "homepage": "https://www.city.kokubunji.tokyo.jp",
-    "last_updated": "2025-05-28"
+    "last_updated": "なし"
   },
   "category": {
     "id": "disaster-prevention",
     "name": "防災・災害対応",
     "services": [
       {
-        "id": "svc-1035001",
-        "name": "防災マップ",
-        "url": "https://www.city.kokubunji.tokyo.jp/bosai/1035001",
-        "description": "洪水・土砂災害のハザードマップ、避難所一覧、防災情報を掲載しています。",
+        "id": "svc-1011090-130",
+        "name": "自立型ソーラースタンドを設置しました",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1030856/1017803.html",
+        "description": "太陽光発電のみでスマートフォン等の携帯電話を充電できる自立型ソーラースタンドを、市内5ヶ所（市民スポーツセンター・本多公民館・光公民館・もとまち公民館・並木公民館）の各施設入口付近に設置し、運用を開始。LED照明を備え、再生可能エネルギーを電源としているため災害などの緊急時にも使用可能。利用可能時間は各施設の開館時間（休館日を除く）。開館時間の詳細は関連情報の各施設ページを参照。",
         "tags": [
-          "市民"
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "防災・災害対応",
+          "環境・ごみ・リサイクル",
+          "まちづくり・都市整備"
+        ],
+        "eligibility": "どなたでも利用できます。",
+        "howToApply": "申込不要。各施設の開館時間内に利用可能。休館日に注意。",
+        "publishedDate": "2021-03-29"
+      },
+      {
+        "id": "svc-1011090-134",
+        "name": "立川飛行場への陸上自衛隊V-22オスプレイの飛来中止について",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011349/1028991.html",
+        "description": "立川飛行場周辺自治体連絡会幹事市の立川市からの情報提供により、令和5年6月28日（水曜日）の離着陸訓練は中止となりました。",
+        "tags": [
+          "その他（該当が不明な場合）"
         ],
         "serviceLabels": [
           "防災・災害対応"
         ],
-        "eligibility": "市民全般",
-        "howToApply": "市役所窓口で配布。ホームページからもダウンロード可。",
-        "publishedDate": "2024-10-15"
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2023-06-28"
+      },
+      {
+        "id": "svc-1011090-135",
+        "name": "立川飛行場への陸上自衛隊V-22オスプレイの飛来に係る日時について",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011349/1028991.html",
+        "description": "【情報提供】立川市（令和5年6月27日）／【日にち】令和5年6月28日（水曜日）／【時間】13時～16時／【機数】V-22オスプレイ 1機／【訓練内容】離着陸訓練",
+        "tags": [
+          "その他（該当が不明な場合）"
+        ],
+        "serviceLabels": [
+          "防災・災害対応"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2023-06-27"
+      },
+      {
+        "id": "svc-1011090-137",
+        "name": "立川飛行場への陸上自衛隊V-22オスプレイの飛来に係る日時について",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011349/1028991.html",
+        "description": "【情報提供】立川市（令和5年4月4日）／【日にち】令和5年4月5日（水曜日）／【時間】9時～12時／【機数】V-22オスプレイ 1機／【訓練内容】計器訓練、離着陸訓練",
+        "tags": [
+          "その他（該当が不明な場合）"
+        ],
+        "serviceLabels": [
+          "防災・災害対応"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2023-04-04"
+      },
+      {
+        "id": "svc-1011090-139",
+        "name": "立川飛行場への陸上自衛隊V-22オスプレイの飛来に係る日時について",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011349/1028991.html",
+        "description": "【情報提供】陸上自衛隊 立川駐屯地（令和5年3月27日）／【日にち】令和5年3月28日（火曜日）／【時間】13時～16時／【機数】V-22オスプレイ 1機／【訓練内容】計器訓練、離着陸訓練",
+        "tags": [
+          "その他（該当が不明な場合）"
+        ],
+        "serviceLabels": [
+          "防災・災害対応"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2023-03-27"
+      },
+      {
+        "id": "svc-1011090-140",
+        "name": "立川飛行場への陸上自衛隊V-22オスプレイの飛来に係る日時について",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1011090/1011349/1028991.html",
+        "description": "【情報提供】北関東防衛局（令和5年1月25日）／【日にち】令和5年2月1日（水曜日）〔予備日：2月2日（木）、2月3日（金）〕／【時間】10時～15時（12時～13時除く）／【機数】V-22オスプレイ 1機／【訓練内容】航法訓練、離着陸訓練／（注）訓練終了後は木更津駐屯地へ帰投。天候等により変更の可能性あり。",
+        "tags": [
+          "その他（該当が不明な場合）"
+        ],
+        "serviceLabels": [
+          "防災・災害対応"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2023-01-25"
+      },
+      {
+        "id": "svc-1008592-36",
+        "name": "新型インフルエンザ等に備えた家庭用食料品備蓄ガイドについて",
+        "url": "https://www.city.kokubunji.tokyo.jp/kurashi/1008592/1001919/1001989.html",
+        "description": "リンク集",
+        "tags": [
+          "どなたでも利用・参加可能"
+        ],
+        "serviceLabels": [
+          "防災・災害対応",
+          "健康・医療"
+        ],
+        "eligibility": "なし",
+        "howToApply": "なし",
+        "publishedDate": "2022-03-09"
       }
     ]
   }
